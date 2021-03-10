@@ -10,7 +10,7 @@ import App from '../components/app/App';
 
 const mapStateToProps = (state) => {
     return {
-        currentIndex: state | state.navIndex
+        currentIndex: state.navigationReducer | state.navigationReducer.navIndex
     }
 }
 

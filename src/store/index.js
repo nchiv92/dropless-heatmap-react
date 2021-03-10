@@ -1,15 +1,16 @@
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import navigationReducer from './reducers/navigationReducer';
+import mapReducer from './reducers/mapReducer';
 
-const initialState = {
-    navigationReducer: {
-        navIndex: 0
-    }
-}
+
+const rootReducer = combineReducers({
+    mapReducer,
+    navigationReducer
+})
+
+
 const store = createStore(
-    navigationReducer, 
-    initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    rootReducer
 )
 
 export default store;
