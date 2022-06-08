@@ -1,10 +1,8 @@
 import { combineReducers, createStore } from 'redux';
 import navigationReducer from './reducers/navigationReducer';
-import mapReducer from './reducers/mapReducer';
 
 
 const rootReducer = combineReducers({
-    mapReducer,
     navigationReducer
 })
 

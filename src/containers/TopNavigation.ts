@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import { switchTab } from '../store/actions/index';
-import App from '../components/app/App';
+import TopNavigation from '../components/top-navigation/top-navigation';
 
 /**
  * @ignore
- * @param index
+ * @param state
  * @returns {{currentIndex: number}}
  */
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (navigationReducer) => {
     return {
-        currentIndex: state.navigationReducer | state.navigationReducer.navIndex
+        currentIndex: navigationReducer.navIndex
     }
 }
 
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps, 
     mapDispatchToProps
-)(App)
+)(TopNavigation)

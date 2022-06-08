@@ -3,6 +3,7 @@ import { Provider }  from 'react-redux';
 import './index.scss';
 import App from './containers/App';
 import store from './store';
+import React from 'react';
 
 render(
   <Provider store={store}>

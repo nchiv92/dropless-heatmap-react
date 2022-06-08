@@ -5,7 +5,7 @@ const initialState = {
 }
     
     
-const navigationReducer = (state = initialState, action) => {
+const navigationReducer = (state = initialState, action: any) => {
     if( action.type === ActionTypes.SWITCH_TAB ) {
         return action.payload.navIndex
     }

@@ -1,7 +1,8 @@
+import React from 'react';
 import './App.scss';
-import Map from '../../containers/Map';
 import TopNavigation from '../top-navigation/top-navigation';
 import About from '../about/about';
+import Data from '../data/data';
 
 
 const App = (props) => {
@@ -9,7 +10,7 @@ const App = (props) => {
     return (
       <div className="App">
         <TopNavigation switchIndex={switchIndex} currentIndex={props.currentIndex}/>
-        {currentIndex === 0 ? <About/> : <Map/>}
+        {currentIndex === 0 ? <About/> : <Data/>}
       </div>
     );
 }
