@@ -1,5 +1,13 @@
-.scores {
-    height: 90vh;
-    width: 100%;
-    color: blue;
+.DataContainer {
+  height: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 44px;
+  margin: 0;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

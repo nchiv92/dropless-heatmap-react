@@ -1,14 +1,17 @@
-import { combineReducers, createStore } from 'redux';
-import navigationReducer from './reducers/navigationReducer';
-
+import { combineReducers } from "redux";
+import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import { footballDataReducer } from "./reducers/FootballDataReducer";
 
 const rootReducer = combineReducers({
-    navigationReducer
-})
+  footballData: footballDataReducer,
+});
 
+const store = configureStore({
+  middleware: [thunk],
+  reducer: rootReducer,
+});
 
-const store = createStore(
-    rootReducer
-)
+export type RootState = ReturnType<typeof rootReducer>;
 
 export default store;

@@ -1,52 +1,29 @@
-import React, { useCallback, useState } from 'react';
-import './data.scss';
-import plApi from '../../config'
-import { useEffect } from 'react';
-
-interface ChelseaData {
-    address: string;
-}
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "./data.scss";
+import { fetchData } from "../../store/reducers/FootballDataReducer";
+import { RootState } from "../../store";
 
 const Data = (props: any) => {
+  const [fetching, setFetching] = useState(true);
+  const dispatch = useDispatch();
+  const data: any = useSelector((state: RootState) => {
+    return state.footballData;
+  });
+  useEffect(() => {
+    dispatch(fetchData());
+  }, []);
 
-    const [data, setData] = useState(null);
-    const [fetching, setFetching] = useState(true)
+  useEffect(() => {
+    setFetching(false);
+  }, [data]);
 
-    useEffect(() => {
-      fetchData()
-    }, [])
-     async function fetchData() {
-        let response;
-        let formattedResponse;
-
-
-      const url = 'https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/team?name=Chelsea';
-
-      
-      const options: any = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': plApi,
-            'X-RapidAPI-Host': 'heisenbug-premier-league-live-scores-v1.p.rapidapi.com'
-        },
-      };
-
-            response = await fetch(url, options);
-    
-        if (response) {
-          formattedResponse = await response.json() as ChelseaData;
-          setData(formattedResponse);
-          setFetching(false)
-        }
-      };    
-
-  
-
-    return (
-        <div className="scores">
-            {fetching ? 'Loading' : data?.address}
-        </div>
-    )
-}
+  return (
+    <div className="DataContainer">
+      {fetching ? "Loading" : data.data.name}
+      Test
+    </div>
+  );
+};
 
 export default Data;
