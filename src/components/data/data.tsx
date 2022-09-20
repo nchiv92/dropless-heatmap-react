@@ -8,7 +8,7 @@ const Data = (props: any) => {
   const [fetching, setFetching] = useState(true);
   const dispatch = useDispatch();
   const data: any = useSelector((state: RootState) => {
-    return state.footballData;
+    return state.footballData.data;
   });
   useEffect(() => {
     dispatch(fetchData());
@@ -20,8 +20,7 @@ const Data = (props: any) => {
 
   return (
     <div className="DataContainer">
-      {fetching ? "Loading" : data.data.name}
-      Test
+      {fetching ? "Loading" : "coming soon..."}
     </div>
   );
 };

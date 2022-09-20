@@ -19,12 +19,6 @@ const App = () => {
         <SideNavigation />
         <div className="bodyContainer">
           <TransitionGroup>
-            {/*
-            This is no different than other usage of
-            <CSSTransition>, just make sure to pass
-            `location` to `Switch` so it can match
-            the old location as it animates out.
-          */}
             <CSSTransition
               key={window.location.pathname}
               classNames={"fade"}
