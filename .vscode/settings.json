@@ -1,0 +1,16 @@
+{
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.addMissingImports": true,
+        "source.fixAll.eslint": true,
+
+    },
+    "editor.snippetSuggestions": "bottom",
+    // Doesn't support @> so breaks the timeslot file when it formats :/
+    // "[sql]": {
+    //     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    // },
+    "sql-formatter.uppercase": true
+}

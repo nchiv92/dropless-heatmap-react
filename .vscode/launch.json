@@ -1,0 +1,30 @@
+// Usage - Click Run and Debug after starting node running, choose the process that is running index.ts
+{
+  "version": "0.2.0",
+  "configurations": [
+    // Nodemon config
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Platform Debug - Launch (use this)",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/nodemon/bin/nodemon.js",
+      "program": "${workspaceFolder}/index.ts",
+      "restart": true,
+      "runtimeArgs": [
+          "--debug=5858",
+          "--inspect-brk"
+      ],
+      "port": 5858,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Platform Debug - Attach",
+      "processId": "${command:PickProcess}",
+      "restart": true,
+      "protocol": "inspector"
+    },
+  ]
+}

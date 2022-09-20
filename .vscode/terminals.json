@@ -1,0 +1,24 @@
+{
+  "autorun": true,
+  "terminals": [
+    {
+      "name": "Platform",
+      "description": "docker-platform",
+      "focus": true,
+      "cwd": "/Users/adam/DROPLESS/SRC/docker-platform",
+      "command": "npm run start"
+    },
+    {
+      "name": "Portal",
+      "description": "s3-portal",
+      "cwd": "/Users/adam/DROPLESS/SRC/s3-portal",
+      "command": "npm run start"
+    },
+    {
+      "name": "Web App",
+      "description": "s3-web-app",
+      "cwd": "/Users/adam/DROPLESS/SRC/s3-web-app",
+      "command": "npm run start"
+    },
+  ]
+}

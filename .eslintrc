@@ -1,0 +1,128 @@
+{
+  "env": {
+    "node": true,
+    "jest": true,
+    "jasmine": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+  "ignorePatterns": ["**/node_modules/**", "scripts"],
+  "plugins": ["@typescript-eslint", "prettier", "unused-imports", "filenames"],
+  "rules": {
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-empty-interface": "off",
+    "quote-props": ["warn", "as-needed"],
+    "no-plusplus": "off",
+    "class-methods-use-this": "off",
+    "no-loop-func": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "no-new": "off",
+    "camelcase": "off",
+    "no-use-before-define": "off",
+    "consistent-return": "off",
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "max-len": ["off", { "code": 180, "ignoreUrls": true }],
+    "no-unused-expressions": [
+      "error",
+      { "allowShortCircuit": true, "allowTernary": true }
+    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "no-multi-assign": ["error", { "ignoreNonDeclaration": true }],
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": ["warn", { "devDependencies": true }],
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement",
+      // TODO - add more checks here.
+      {
+        "selector": "Identifier[name='isArray']",
+        "message": "Please use Is.array instead to handle null values properly too. Also looks nicer."
+      },
+      {
+        "selector": "Identifier[name='parseInt']",
+        "message": "Please use Parse.integer. This ensures the number is actually an integer and can provide a default value."
+      },
+      {
+        "selector": "Identifier[name='parseFloat']",
+        "message": "Please use Parse.number. This ensures the value is actually a number and can provide a default value."
+      },
+      {
+        "selector": "UnaryExpression[operator='typeof']",
+        "message": "Please use the corresponding function in the 'Is' class to handle all edge cases."
+      }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "warn",
+      {
+        "accessibility": "explicit",
+        "overrides": {
+          "accessors": "explicit",
+          "constructors": "no-public",
+          "methods": "explicit",
+          "properties": "explicit",
+          "parameterProperties": "explicit"
+        }
+      }
+    ],
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "@typescript-eslint/member-ordering": ["warn"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      // TODO - need to figure out a way of not neededing pascal case here.
+      {
+        "selector": "default",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      { "selector": "enumMember", "format": ["PascalCase"] },
+      { "selector": "typeLike", "format": ["PascalCase"] },
+      {
+        "selector": "memberLike",
+        "modifiers": ["private"],
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      }
+    ],
+    // TODO - write the regex for our naming standard
+    // "filenames/match-regex": 2,
+
+    // TODO - very very slightly maybe
+    // Big Job
+    "no-param-reassign": "off",
+
+    // TODO - want all these added either eventually or on a new project.
+    "@typescript-eslint/no-explicit-any": "off",
+
+    // TODO - figure out why globals can't be resolved.
+    "import/no-unresolved": "off",
+    // TODO - giving false positives, maybe try fix
+    //"import/no-unused-modules": [1, {"unusedExports": true}],
+    "import/no-unused-modules": "off",
+    "import/prefer-default-export": "off",
+
+    // TODO I see the merit in this but cba having to change all our current ways https://eslint.org/docs/rules/default-param-last
+    "default-param-last": "off"
+  }
+}
