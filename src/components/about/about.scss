@@ -1,42 +1,52 @@
 .about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   &__biography {
+    margin-top: 40px;
     h1 {
-      font-size: 30px;
+      font-size: 60px;
       font-weight: 600;
-      line-height: 44px;
     }
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Roboto, sans-serif;
-    color: rgba(0, 0, 0, 0.8);
+    h2 {
+      font-style: bold;
+      font-size: 25px;
+    }
+    line-height: 5px;
+    color: lightblue;
     height: 300px;
     display: flex;
 
     flex-direction: column;
-    justify-content: center;
+    margin-left: 20px;
   }
   &__experience {
     height: 300px;
     flex-direction: row;
     display: flex;
-    justify-content: space-evenly;
+    color: lightblue;
+    font-size: 25px;
 
     &__imageWrapper {
-      height: 200px;
-      width: 200px;
+      height: 300px;
       justify-content: center;
       display: flex;
+      flex: 1;
       flex-direction: column;
       text-align: center;
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      margin: auto 10px;
+
       &__image {
-        max-height: 150px;
-        max-width: 150px;
+        height: 150px;
+        width: 150px;
         object-fit: contain;
-        margin: auto;
+        margin: 20px auto;
       }
+    }
+    &__imageWrapper:hover {
+      border: 2px solid lightblue;
+      opacity: 0.8;
     }
   }
 }

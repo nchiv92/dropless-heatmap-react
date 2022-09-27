@@ -48,7 +48,7 @@
     ],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
-    "no-multi-assign": ["error", { "ignoreNonDeclaration": true }],
+    "no-multi-assign": "error",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": ["warn", { "devDependencies": true }],
     "no-restricted-syntax": [
