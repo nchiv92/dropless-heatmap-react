@@ -51,6 +51,8 @@
     "no-multi-assign": "error",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": ["warn", { "devDependencies": true }],
+    "no-else-return": ["error", { "allowElseIf": true }],
+
     "no-restricted-syntax": [
       "error",
       "ForInStatement",

@@ -1,7 +1,9 @@
 import moment from "moment";
 
 export interface FootballData {
-  address?: string;
+  type?: string;
+  value?: string;
+  guessed?: boolean;
 }
 
 export interface JobExperienceData {

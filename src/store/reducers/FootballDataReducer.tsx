@@ -5,11 +5,11 @@ import {
 } from "../actions/FootballDataActions";
 
 interface State {
-  data: FootballData;
+  data: FootballData[];
 }
 
 const initialState: State = {
-  data: {},
+  data: [],
 };
 
 export const footballDataReducer = (state = initialState, action: any) => {
