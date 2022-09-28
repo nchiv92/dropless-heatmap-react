@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faCodeBranch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import "./side-navigation.scss";
@@ -36,9 +36,9 @@ const SideNavigation = (props: any) => {
           />
         </NavLink>
         <NavLink className={"sideNavigation__navButtons__btn"} to={"data"}>
-          {!collapsed && <span>{"Coming Soon"}</span>}
+          {!collapsed && <span>{"Projects"}</span>}
           <FontAwesomeIcon
-            icon={faQuestion}
+            icon={faCodeBranch}
             className={"sideNavigation__navButtons__btn__icon"}
           />
         </NavLink>
