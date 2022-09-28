@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./data.scss";
+import "./side-projects.scss";
 import { fetchData } from "../../store/reducers/FootballDataReducer";
 import { RootState } from "../../store";
 import { FootballData } from "../../utils/types";
 
-const Data = (props: any) => {
+const SideProjects = (props: any) => {
   const [fetching, setFetching] = useState(true);
   const dispatch = useDispatch();
   const data: FootballData = useSelector((state: RootState) => {
@@ -18,12 +18,13 @@ const Data = (props: any) => {
   useEffect(() => {
     setFetching(false);
   }, [data]);
+  console.log(data);
 
   return (
-    <div className="DataContainer">
+    <div className="SideProjectContainer">
       {fetching ? "Loading" : "coming soon..."}
     </div>
   );
 };
 
-export default Data;
+export default SideProjects;

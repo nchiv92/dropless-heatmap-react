@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "./App.scss";
 import SideNavigation from "../side-navigation/side-navigation";
 import About from "../about/about";
-import Data from "../data/data";
+import SideProjects from "../side-projects/side-projects";
 
 const mapStateToProps = (state: any) => {
   return {
@@ -18,19 +17,10 @@ const App = () => {
       <BrowserRouter>
         <SideNavigation />
         <div className="bodyContainer">
-          <TransitionGroup>
-            <CSSTransition
-              key={window.location.pathname}
-              classNames={"fade"}
-              timeout={300}
-              style={"height: 100%; width: 100%"}
-            >
-              <Routes>
-                <Route path="/" element={<About />} />
-                <Route path="/data" element={<Data />} />
-              </Routes>
-            </CSSTransition>
-          </TransitionGroup>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/side-projects" element={<SideProjects />} />
+          </Routes>
         </div>
       </BrowserRouter>
     </div>

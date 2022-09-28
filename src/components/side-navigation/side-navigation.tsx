@@ -35,7 +35,10 @@ const SideNavigation = (props: any) => {
             className={"sideNavigation__navButtons__btn__icon"}
           />
         </NavLink>
-        <NavLink className={"sideNavigation__navButtons__btn"} to={"data"}>
+        <NavLink
+          className={"sideNavigation__navButtons__btn"}
+          to={"side-projects"}
+        >
           {!collapsed && <span>{"Projects"}</span>}
           <FontAwesomeIcon
             icon={faCodeBranch}

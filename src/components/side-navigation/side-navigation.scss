@@ -52,18 +52,14 @@
       font-weight: 600;
       transition: transform 3s ease-in-out;
       text-decoration: none;
+      opacity: 0.8;
       &.active {
-        border-right: 10px solid lightblue;
-        opacity: 0.8;
-      }
-      &__icon:hover {
-        animation: fa-beat 2s infinite;
+        border: 2px solid lightblue;
       }
     }
 
-    .btn:hover {
-      background-color: rgba(67, 61, 64, 0.8);
-      border-right: 10px solid lightblue;
+    &__btn:hover {
+      animation: fa-beat-fade 2s infinite;
     }
   }
 }
