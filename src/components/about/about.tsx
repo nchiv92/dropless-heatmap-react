@@ -14,8 +14,8 @@ const ExperienceItem = (props: ItemProps) => {
   return (
     <div
       className={"about__experience__imageWrapper"}
-      onMouseEnter={() => setShowDescription((prev) => !prev)}
-      onMouseLeave={() => setShowDescription((prev) => !prev)}
+      onMouseEnter={() => setShowDescription(true)}
+      onMouseLeave={() => setShowDescription(false)}
     >
       {showDescription ? (
         item.duties.map((duty) => {
