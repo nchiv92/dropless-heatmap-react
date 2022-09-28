@@ -66,7 +66,9 @@ const GuessingGame = (props: any) => {
         ? "Loading"
         : data.map((item, i) => {
             return (
-              <Item item={item} currentStep={currentStep} index={i} key={i} />
+              item.type !== "name" && (
+                <Item item={item} currentStep={currentStep} index={i} key={i} />
+              )
             );
           })}
     </div>
