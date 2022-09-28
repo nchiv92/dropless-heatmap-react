@@ -60,6 +60,8 @@
 
     &__btn:hover {
       animation: fa-beat-fade 2s infinite;
+      color: lightblue;
+      text-decoration: none;
     }
   }
 }
