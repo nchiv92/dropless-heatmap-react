@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./guessing-game.scss";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fetchData } from "../../../store/reducers/FootballDataReducer";
 import { RootState } from "../../../store";
 import { FootballData } from "../../../utils/types";
@@ -58,9 +60,17 @@ const GuessingGame = (props: any) => {
   return (
     <div className="GuessingGame">
       <form onSubmit={(e) => checkInput(e)}>
-        <input type={"text"} onChange={(e) => setAnswer(e.target.value)} />
-        <button type={"submit"}>Submit answer</button>
-        {success && <span>CORRECT!</span>}
+        <input
+          type={"text"}
+          onChange={(e) => setAnswer(e.target.value)}
+          placeholder={"Guess"}
+        />
+        <button type={"submit"} className={"btn btn-primary"}>
+          Submit
+        </button>
+        {success && (
+          <FontAwesomeIcon icon={faCheck} className={"success-icon"} />
+        )}
       </form>
       {fetching
         ? "Loading"

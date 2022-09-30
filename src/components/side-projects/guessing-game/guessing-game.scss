@@ -2,10 +2,36 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  input {
-    width: 50px;
+  form {
+    display: flex;
+    justify-content: center;
+    input {
+      width: 150px;
+      height: 40px;
+      margin-right: 5px;
+      background-color: rgba(0, 1, 8, 0.899);
+      border: 2px solid rgba(0, 1, 8, 0.899);
+      color: lightblue;
+      font-size: 1rem;
+    }
+    input:focus-visible {
+      outline: none;
+    }
+    .btn {
+      color: lightblue;
+      background-color: rgba(0, 1, 8, 0.899);
+      border: 2px solid rgba(0, 1, 8, 0.899);
+    }
+    .btn:hover {
+      border: 2px solid lightblue;
+    }
+    .success-icon {
+      color: green;
+      margin: auto 10px;
+    }
   }
   &__item {
+    text-transform: capitalize;
     &.guessed {
       text-decoration: line-through;
     }
