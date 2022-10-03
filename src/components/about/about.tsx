@@ -5,6 +5,7 @@ import { experienceData } from "./experience-data";
 
 interface ItemProps {
   item: JobExperienceData;
+  index: number;
 }
 
 const ExperienceItem = (props: ItemProps) => {
@@ -13,16 +14,27 @@ const ExperienceItem = (props: ItemProps) => {
 
   return (
     <div
+      key={props.index}
       className={"about__experience__imageWrapper"}
       onMouseEnter={() => setShowDescription(true)}
       onMouseLeave={() => setShowDescription(false)}
     >
       {showDescription ? (
-        item.duties.map((duty) => {
-          return <span>{duty}</span>;
+        item.duties.map((duty, index) => {
+          return (
+            <span
+              data-testid={`experience-technologies-text-${index}`}
+              key={index}
+            >
+              {duty}
+            </span>
+          );
         })
       ) : (
-        <div className={"about__experience__imageWrapper__main"}>
+        <div
+          className={"about__experience__imageWrapper__main"}
+          data-testid={`experience-companies-text-${props.index}`}
+        >
           <img
             className={"about__experience__imageWrapper__image"}
             src={item.logoUrl}
@@ -45,9 +57,9 @@ const About = () => {
         <h1>Nathan Chiverton</h1>
         <h2>Frontend Developer</h2>
       </div>
-      <div className={"about__experience"}>
+      <div data-testid={"experience-section"} className={"about__experience"}>
         {experienceData.map((item, i) => {
-          return <ExperienceItem key={i} item={item} />;
+          return <ExperienceItem key={i} item={item} index={i} />;
         })}
       </div>
     </div>
