@@ -15,15 +15,36 @@ const NavBar = (props: any) => {
   return (
     <NavBarElement>
       <NavBarButtons>
-        <NavBarButton end to={"/"}>
+        <NavBarButton
+          to={"/"}
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          activeClass="active"
+        >
           <NavBarButtonText>{"Welcome"}</NavBarButtonText>
           <NavBarButtonIcon icon={faHand} />
         </NavBarButton>
-        <NavBarButton to={"experience"}>
+        <NavBarButton
+          to={"experience"}
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          activeClass="active"
+        >
           <NavBarButtonText>{"Experience"}</NavBarButtonText>
           <NavBarButtonIcon icon={faUser} />
         </NavBarButton>
-        <NavBarButton to={"side-projects"}>
+        <NavBarButton
+          to={"side-projects"}
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          activeClass="active"
+        >
           <NavBarButtonText>{"Side Projects"}</NavBarButtonText>
           <NavBarButtonIcon icon={faCodeBranch} />
         </NavBarButton>

@@ -22,7 +22,7 @@ export const footballDataReducer = (state = initialState, action: any) => {
   }
 };
 
-export const fetchData = () => async (dispatch: any, getState: any) => {
+export const fetchFootballData = () => async (dispatch: any, getState: any) => {
   const data = await fetch("http://localhost:3001/footballdata");
   dispatch(setData(await data.json()));
 };

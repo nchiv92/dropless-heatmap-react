@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Welcome } from "../pages/welcome";
 import SideProjects from "../pages/side-projects/side-projects";
 import NavBar from "../components/nav-bar/nav-bar";
@@ -15,16 +14,12 @@ const mapStateToProps = (state: any) => {
 const App = () => {
   return (
     <AppContainer>
-      <BrowserRouter>
-        <NavBar />
-        <BodyContainer>
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/side-projects" element={<SideProjects />} />
-          </Routes>
-        </BodyContainer>
-      </BrowserRouter>
+      <NavBar />
+      <BodyContainer>
+        <Welcome />
+        <Experience />
+        <SideProjects />
+      </BodyContainer>
     </AppContainer>
   );
 };

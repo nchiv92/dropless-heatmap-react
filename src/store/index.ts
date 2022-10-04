@@ -2,9 +2,11 @@ import { combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { configureStore } from "@reduxjs/toolkit";
 import { footballDataReducer } from "./reducers/FootballDataReducer";
+import { cvDataReducer } from "./reducers/CVDataReducer";
 
 const rootReducer = combineReducers({
   footballData: footballDataReducer,
+  cvData: cvDataReducer,
 });
 
 const store = configureStore({

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 import styled from "styled-components";
 
 const NavBarElement = styled.div`
@@ -21,7 +21,7 @@ const NavBarButtons = styled.div`
   background-color: inherit;
 `;
 
-const NavBarButton = styled(NavLink)`
+const NavBarButton = styled(Link)`
   border: none;
   font-size: 25px;
   display: flex;

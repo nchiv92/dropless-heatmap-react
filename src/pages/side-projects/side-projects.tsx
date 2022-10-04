@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../store/reducers/FootballDataReducer";
+import { fetchFootballData } from "../../store/reducers/FootballDataReducer";
 import { RootState } from "../../store";
 import { FootballData } from "../../utils/types";
 import { SideProjectsContainer } from "./side-projects.styles";
@@ -12,7 +12,7 @@ const SideProjects = (props: any) => {
     return state.footballData.data;
   });
   useEffect(() => {
-    dispatch(fetchData());
+    dispatch(fetchFootballData());
   }, []);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const SideProjects = (props: any) => {
   }, [data]);
 
   return (
-    <SideProjectsContainer>
+    <SideProjectsContainer id="side-projects">
       {fetching ? "Loading" : "coming soon..."}
     </SideProjectsContainer>
   );

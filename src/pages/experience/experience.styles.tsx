@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ExperiencePageContainer = styled.div`
-  height: 300px;
+  height: 100vh;
   flex-direction: row;
   display: flex;
   font-size: 25px;

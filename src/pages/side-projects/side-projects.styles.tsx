@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SideProjectsContainer = styled.div`
-  height: 500px;
+  height: 100vh;
   font-size: 30px;
   font-weight: 600;
   line-height: 44px;

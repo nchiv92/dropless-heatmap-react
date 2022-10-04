@@ -51,6 +51,11 @@ const WelcomePageSocialIconWrapper = styled.a`
   margin-left: 30px;
 `;
 
+const LoadingSpinner = styled(FontAwesomeIcon)`
+  animate: fa-spin 1s infinite;
+  font-size: 100px;
+`;
+
 export {
   WelcomePageContainer,
   WelcomePageScrollIcon,
@@ -62,4 +67,5 @@ export {
   WelcomePageSocialIcon,
   WelcomePageTitleWrapper,
   WelcomePageSocialIconWrapper,
+  LoadingSpinner,
 };
