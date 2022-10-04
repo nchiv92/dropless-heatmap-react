@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { JobExperienceData } from "../../utils/types";
-import "./about.scss";
 import { experienceData } from "./experience-data";
+import {
+  ExperiencePageContainer,
+  ExperiencePageItem,
+  ExperiencePageItemRole,
+  ExperiencePageItemRoleDates,
+  ExperiencePageItemRoleImage,
+  ExperiencePageItemRoleTitle,
+  ExperiencePageItemTechnologies,
+} from "./experience.styles";
 
 interface ItemProps {
   item: JobExperienceData;
@@ -13,9 +21,8 @@ const ExperienceItem = (props: ItemProps) => {
   const { item } = props;
 
   return (
-    <div
+    <ExperiencePageItem
       key={props.index}
-      className={"about__experience__imageWrapper"}
       onMouseEnter={() => setShowDescription(true)}
       onMouseLeave={() => setShowDescription(false)}
       onClick={() => setShowDescription(!showDescription)}
@@ -23,48 +30,42 @@ const ExperienceItem = (props: ItemProps) => {
       {showDescription ? (
         item.duties.map((duty, index) => {
           return (
-            <span
+            <ExperiencePageItemTechnologies
               data-testid={`experience-technologies-text-${index}`}
               key={index}
             >
               {duty}
-            </span>
+            </ExperiencePageItemTechnologies>
           );
         })
       ) : (
-        <div
-          className={"about__experience__imageWrapper__main"}
+        <ExperiencePageItemRole
           data-testid={`experience-companies-text-${props.index}`}
         >
-          <img
-            className={"about__experience__imageWrapper__image"}
+          <ExperiencePageItemRoleImage
             src={item.logoUrl}
             alt={item.companyName}
           />
-          <span>{item.jobTitle}</span>
-          <span>
+          <ExperiencePageItemRoleTitle>
+            {item.jobTitle}
+          </ExperiencePageItemRoleTitle>
+          <ExperiencePageItemRoleDates>
             {item.beginDate} - {item.endDate}
-          </span>
-        </div>
+          </ExperiencePageItemRoleDates>
+        </ExperiencePageItemRole>
       )}
-    </div>
+    </ExperiencePageItem>
   );
 };
 
-const About = () => {
+const Experience = () => {
   return (
-    <div className={"about"}>
-      <div className={"about__biography"}>
-        <h1>Nathan Chiverton</h1>
-        <h2>Frontend Developer</h2>
-      </div>
-      <div data-testid={"experience-section"} className={"about__experience"}>
-        {experienceData.map((item, i) => {
-          return <ExperienceItem key={i} item={item} index={i} />;
-        })}
-      </div>
-    </div>
+    <ExperiencePageContainer data-testid={"experience-section"}>
+      {experienceData.map((item, i) => {
+        return <ExperienceItem key={i} item={item} index={i} />;
+      })}
+    </ExperiencePageContainer>
   );
 };
 
-export default About;
+export default Experience;

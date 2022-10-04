@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./side-projects.scss";
 import { fetchData } from "../../store/reducers/FootballDataReducer";
 import { RootState } from "../../store";
 import { FootballData } from "../../utils/types";
+import { SideProjectsContainer } from "./side-projects.styles";
 
 const SideProjects = (props: any) => {
   const [fetching, setFetching] = useState(true);
@@ -18,12 +18,11 @@ const SideProjects = (props: any) => {
   useEffect(() => {
     setFetching(false);
   }, [data]);
-  console.log(data);
 
   return (
-    <div className="SideProjectContainer">
+    <SideProjectsContainer>
       {fetching ? "Loading" : "coming soon..."}
-    </div>
+    </SideProjectsContainer>
   );
 };
 
