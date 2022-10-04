@@ -1,13 +1,13 @@
 .sideNavigation {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   width: 200px;
   opacity: 0.8;
   top: 0;
   border-right: 1px solid lightblue;
   transition: width 1s ease-in-out;
-  overflow: hidden;
+  position: static;
 
   &.collapsed {
     width: 50px;

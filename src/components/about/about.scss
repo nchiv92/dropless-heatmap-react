@@ -1,6 +1,7 @@
 .about {
   display: flex;
   flex-direction: column;
+
   &__biography {
     margin-top: 40px;
     h1 {
@@ -25,12 +26,14 @@
     display: flex;
     color: lightblue;
     font-size: 25px;
+    flex-basis: auto;
+    flex-wrap: wrap;
 
     &__imageWrapper {
       height: 300px;
       justify-content: center;
       display: flex;
-      flex: 1;
+      flex: 1 1 340px;
       flex-direction: column;
       text-align: center;
       border: 2px solid rgba(0, 0, 0, 0.8);
@@ -51,6 +54,13 @@
     &__imageWrapper:hover {
       border: 2px solid lightblue;
       opacity: 0.8;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    &__experience {
+      &__imageWrapper {
+        margin-bottom: 10px;
+      }
     }
   }
 }

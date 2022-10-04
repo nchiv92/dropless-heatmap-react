@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faCodeBranch } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-
+import {
+  faClose,
+  faBars,
+  faCodeBranch,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import "./side-navigation.scss";
 
 const SideNavigation = (props: any) => {
