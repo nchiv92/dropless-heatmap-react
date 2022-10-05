@@ -16,11 +16,11 @@ const ExperiencePageItem = styled.div`
   flex: 1 1 340px;
   flex-direction: column;
   text-align: center;
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 5px solid #167d7f;
   border-radius: 8px;
   margin: auto 10px;
   &:hover {
-    border: 2px solid lightblue;
+    border: 2px solid #dcbaa9;
     opacity: 0.8;
   }
 `;

@@ -9,9 +9,10 @@ const NavBarElement = styled.div`
   top: 0;
   justify-content: flex-end;
   overflow: hidden;
-  position: sticky;
+  position: fixed;
   z-index: 999;
-  background: rgba(5, 7, 22, 0.899);
+  background: #0a192f;
+  height: 75px;
 `;
 
 const NavBarButtons = styled.div`
@@ -29,25 +30,56 @@ const NavBarButton = styled(Link)`
   align-items: center;
   width: 200px;
   outline: none;
-  height: 75px;
-  color: lightblue;
+  color: #ddffe7;
   font-weight: 600;
   transition: transform 3s ease-in-out;
   text-decoration: none;
   opacity: 0.8;
   &.active {
-    border: 2px solid lightblue;
+    border-bottom: 5px solid #ddffe7;
   }
   :hover {
     animation: fa-beat-fade 2s infinite;
-    color: lightblue;
+    color: #ddffe7;
     text-decoration: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 
 const NavBarButtonText = styled.span``;
 
-const NavBarButtonIcon = styled(FontAwesomeIcon)``;
+const NavBarButtonIcon = styled(FontAwesomeIcon)`
+  color: #167d7f;
+`;
+
+const NavBarMobileIcon = styled.a`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 2.8rem;
+    cursor: pointer;
+    color: #ddffe7;
+  }
+`;
+
+const NavBarMobileSocialIconWrapper = styled.a`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    font-size: 2.8rem;
+    cursor: pointer;
+    color: #ddffe7;
+  }
+`;
 
 export {
   NavBarElement,
@@ -55,4 +87,6 @@ export {
   NavBarButton,
   NavBarButtonIcon,
   NavBarButtonText,
+  NavBarMobileIcon,
+  NavBarMobileSocialIconWrapper,
 };
