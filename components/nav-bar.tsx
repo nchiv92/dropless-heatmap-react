@@ -7,8 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store";
-import { CVData } from "../../utils/types";
+import { RootState } from "../store";
+import { CVData } from "../utils/types";
 import {
   NavBarButton,
   NavBarButtonIcon,
@@ -17,7 +17,7 @@ import {
   NavBarElement,
   NavBarMobileIcon,
   NavBarMobileSocialIconWrapper,
-} from "./nav-bar.styles";
+} from "../styles/nav-bar.styles";
 
 const NavBar = (props: any) => {
   const data: CVData = useSelector((state: RootState) => {

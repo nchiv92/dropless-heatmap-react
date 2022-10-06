@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import dropless from "../../assets/images/dropless.png";
-import sgdigital from "../../assets/images/sgdigital.png";
-import siliconrhino from "../../assets/images/siliconrhino.png";
+import droplessImg from "../public/assets/images/dropless.png";
+import sgdigitalImg from "../public/assets/images/sgdigital.png";
+import siliconrhinoImg from "../public/assets/images/siliconrhino.png";
 
-import { CVData, JobExperienceData } from "../../utils/types";
+import { CVData, JobExperienceData } from "../utils/types";
 import {
   ExperiencePageContainer,
   ExperiencePageItem,
@@ -13,8 +13,9 @@ import {
   ExperiencePageItemRoleImage,
   ExperiencePageItemRoleTitle,
   ExperiencePageItemTechnologies,
-} from "./experience.styles";
-import { RootState } from "../../store";
+} from "../styles/experience.styles";
+import { RootState } from "../store";
+import { StaticImageData } from "next/image";
 
 interface ItemProps {
   item: JobExperienceData;
@@ -25,19 +26,16 @@ const ExperienceItem = (props: ItemProps) => {
   const [showDescription, setShowDescription] = useState(false);
   const { item } = props;
 
-  const getLogo = () => {
+  const getLogo = (): StaticImageData => {
     switch (item?.companyName) {
       case "Silicon Rhino":
-        return siliconrhino;
-        break;
+        return siliconrhinoImg;
       case "Dropless":
-        return dropless;
-        break;
+        return droplessImg;
       case "SG Digital":
-        return sgdigital;
-        break;
+        return sgdigitalImg;
       default:
-        return undefined;
+        return sgdigitalImg;
     }
   };
 
@@ -66,6 +64,9 @@ const ExperienceItem = (props: ItemProps) => {
           <ExperiencePageItemRoleImage
             src={getLogo()}
             alt={item?.companyName}
+            objectFit="contain"
+            height={"150px"}
+            width={"150px"}
           />
           <ExperiencePageItemRoleTitle>
             {item?.jobTitle}

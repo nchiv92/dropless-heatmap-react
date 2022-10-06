@@ -1,17 +1,18 @@
+import React from "react";
 import { connect, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { Welcome } from "../pages/welcome";
-import SideProjects from "../pages/side-projects/side-projects";
-import NavBar from "../components/nav-bar/nav-bar";
-import { Experience } from "../pages/experience";
+import Welcome from "./welcome";
+import SideProjects from "./side-projects";
+import NavBar from "../components/nav-bar";
+import Experience from "./experience";
 import {
   AppContainer,
   AppMain,
   BodyContainer,
   LoadingSpinnerContainer,
   LoadingSpinnerIcon,
-} from "./App.styles";
+} from "../styles/index.styles";
 import { fetchCvData } from "../store/reducers/CVDataReducer";
 
 const App = () => {

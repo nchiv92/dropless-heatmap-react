@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 const ExperiencePageContainer = styled.div`
@@ -7,6 +8,7 @@ const ExperiencePageContainer = styled.div`
   font-size: 25px;
   flex-basis: auto;
   flex-wrap: wrap;
+  align-items: center;
 `;
 
 const ExperiencePageItem = styled.div`
@@ -18,10 +20,18 @@ const ExperiencePageItem = styled.div`
   text-align: center;
   border: 5px solid #167d7f;
   border-radius: 8px;
-  margin: auto 10px;
+  margin: 10px;
   &:hover {
     border: 2px solid #dcbaa9;
     opacity: 0.8;
+  }
+  &:nth-child(1) {
+    align-self: flex-start;
+  }
+  &:nth-child(2) {
+  }
+  &:nth-child(3) {
+    align-self: flex-end;
   }
 `;
 
@@ -32,12 +42,7 @@ const ExperiencePageItemRole = styled.div`
   display: flex;
 `;
 
-const ExperiencePageItemRoleImage = styled.img`
-  height: 150px;
-  width: 150px;
-  object-fit: contain;
-  margin: 20px auto;
-`;
+const ExperiencePageItemRoleImage = styled(Image)``;
 
 const ExperiencePageItemRoleTitle = styled.span``;
 

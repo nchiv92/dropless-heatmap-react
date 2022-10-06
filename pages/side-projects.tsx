@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFootballData } from "../../store/reducers/FootballDataReducer";
-import { RootState } from "../../store";
-import { FootballData } from "../../utils/types";
-import { SideProjectsContainer } from "./side-projects.styles";
+import { fetchFootballData } from "../store/reducers/FootballDataReducer";
+import { RootState } from "../store";
+import { FootballData } from "../utils/types";
+import { SideProjectsContainer } from "../styles/side-projects.styles";
 
 const SideProjects = (props: any) => {
   const [fetching, setFetching] = useState(true);

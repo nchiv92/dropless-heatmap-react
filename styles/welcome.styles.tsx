@@ -23,6 +23,7 @@ const WelcomePageTitle = styled.div`
 const WelcomePageTitleName = styled.div`
   display: flex;
   margin-left: 15px;
+  font-family: "Dosis";
 `;
 
 const WelcomePageTitleNameLetter = styled.h1`
@@ -60,6 +61,8 @@ const WelcomePageScrollIcon = styled(FontAwesomeIcon)`
 const WelcomePageTitleWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: sticky;
+
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
