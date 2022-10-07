@@ -7,6 +7,7 @@ const AppContainer = styled.div`
   text-align: center;
   justify-content: center;
   height: 100%;
+  width: 100%;
 `;
 const AppMain = styled.div``;
 

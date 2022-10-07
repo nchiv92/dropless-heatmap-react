@@ -16,26 +16,6 @@ const WelcomePageTextWrapper = styled.div`
   align-items: center;
 `;
 
-const WelcomePageTitle = styled.div`
-  display: flex;
-`;
-
-const WelcomePageTitleName = styled.div`
-  display: flex;
-  margin-left: 15px;
-  font-family: "Dosis";
-`;
-
-const WelcomePageTitleNameLetter = styled.h1`
-  font-size: 5rem;
-  font-weight: 600;
-  color: #98d7c2;
-  :hover {
-    animation: fa-shake 0.2s infinite;
-    color: #dcbaa9;
-  }
-`;
-
 const WelcomePageSubTitle = styled.h2`
   font-size: 1.56rem;
   font-weight: 100;
@@ -91,10 +71,7 @@ export {
   WelcomePageTechnologiesItem,
   WelcomePageTechnologiesWrapper,
   WelcomePageTextWrapper,
-  WelcomePageTitle,
   WelcomePageSocialIcon,
   WelcomePageTitleWrapper,
   WelcomePageSocialIconWrapper,
-  WelcomePageTitleName,
-  WelcomePageTitleNameLetter,
 };

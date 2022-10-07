@@ -1,50 +1,24 @@
 import React from "react";
 import { connect, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import Welcome from "./welcome";
-import SideProjects from "./side-projects";
-import NavBar from "../components/nav-bar";
-import Experience from "./experience";
-import {
-  AppContainer,
-  AppMain,
-  BodyContainer,
-  LoadingSpinnerContainer,
-  LoadingSpinnerIcon,
-} from "../styles/index.styles";
+import { AppContainer } from "../styles/app.styles";
 import { fetchCvData } from "../store/reducers/CVDataReducer";
+import LoadingScreen from "../components/loading-screen";
+import Home from "./home";
 
 const App = () => {
-  const [fetching, setFetching] = useState(true);
+  const [fetching, setFetching] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCvData());
+    setFetching(true);
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setFetching(false);
-    }, 5000);
-  }, []);
-  return (
-    <AppContainer>
-      {fetching ? (
-        <LoadingSpinnerContainer>
-          <LoadingSpinnerIcon icon={faSpinner} />
-        </LoadingSpinnerContainer>
-      ) : (
-        <AppMain>
-          <NavBar />
-          <BodyContainer>
-            <Welcome />
-            <Experience />
-            <SideProjects />
-          </BodyContainer>
-        </AppMain>
-      )}
-    </AppContainer>
-  );
+  setTimeout(() => {
+    setFetching(false);
+  }, 4000);
+
+  return <AppContainer>{fetching ? <LoadingScreen /> : <Home />}</AppContainer>;
 };
 
 export default connect(() => ({}))(App);

@@ -64,7 +64,7 @@ const ExperienceItem = (props: ItemProps) => {
           <ExperiencePageItemRoleImage
             src={getLogo()}
             alt={item?.companyName}
-            objectFit="contain"
+            objectFit={"none"}
             height={"150px"}
             width={"150px"}
           />

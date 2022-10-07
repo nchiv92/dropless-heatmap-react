@@ -10,46 +10,11 @@ import {
   WelcomePageTechnologiesItem,
   WelcomePageTechnologiesWrapper,
   WelcomePageTextWrapper,
-  WelcomePageTitle,
-  WelcomePageTitleName,
-  WelcomePageTitleNameLetter,
   WelcomePageTitleWrapper,
 } from "../styles/welcome.styles";
 import { CVData } from "../utils/types";
 import { RootState } from "../store";
-
-interface FullNameProps {
-  fullName: string;
-}
-
-const FullName = (props: FullNameProps) => {
-  const nameArray = props.fullName?.split(" ");
-  const array1 = nameArray[0]?.split("");
-  const array2 = nameArray[1]?.split("");
-
-  return (
-    <WelcomePageTitle>
-      <WelcomePageTitleName>
-        {array1.map((letter, index) => {
-          return (
-            <WelcomePageTitleNameLetter key={index}>
-              {letter}
-            </WelcomePageTitleNameLetter>
-          );
-        })}
-      </WelcomePageTitleName>
-      <WelcomePageTitleName>
-        {array2.map((letter, index) => {
-          return (
-            <WelcomePageTitleNameLetter key={index}>
-              {letter}
-            </WelcomePageTitleNameLetter>
-          );
-        })}
-      </WelcomePageTitleName>
-    </WelcomePageTitle>
-  );
-};
+import CharacterShake from "../components/effects/character-shake";
 
 const Welcome = () => {
   const data: CVData = useSelector((state: RootState) => {
@@ -60,7 +25,14 @@ const Welcome = () => {
     <WelcomePageContainer id="welcome">
       <WelcomePageTextWrapper>
         <WelcomePageTitleWrapper>
-          {data.fullName && <FullName fullName={data?.fullName} />}
+          {data.fullName && (
+            <CharacterShake
+              elements={data?.fullName}
+              fontSize={5}
+              color={"#98d7c2"}
+              hoverColor={"#dcbaa9"}
+            />
+          )}
           <WelcomePageSocialIconWrapper href={data.gitHubUrl} target="_blank">
             <WelcomePageSocialIcon icon={faGithub} />
           </WelcomePageSocialIconWrapper>

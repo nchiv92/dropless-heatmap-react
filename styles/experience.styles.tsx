@@ -25,14 +25,6 @@ const ExperiencePageItem = styled.div`
     border: 2px solid #dcbaa9;
     opacity: 0.8;
   }
-  &:nth-child(1) {
-    align-self: flex-start;
-  }
-  &:nth-child(2) {
-  }
-  &:nth-child(3) {
-    align-self: flex-end;
-  }
 `;
 
 const ExperiencePageItemTechnologies = styled.span``;

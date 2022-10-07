@@ -5,3 +5,12 @@ html > body {
   margin: 0;
   color: #ddffe7;
 }
+
+#__next {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
