@@ -1,11 +1,10 @@
+import { createWrapper } from "next-redux-wrapper";
 import { combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { configureStore } from "@reduxjs/toolkit";
-import { footballDataReducer } from "./reducers/FootballDataReducer";
 import { cvDataReducer } from "./reducers/CVDataReducer";
 
 const rootReducer = combineReducers({
-  footballData: footballDataReducer,
   cvData: cvDataReducer,
 });
 
@@ -15,5 +14,9 @@ const store = configureStore({
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
+
+const makeStore = () => store;
+
+export const wrapper = createWrapper(makeStore);
 
 export default store;

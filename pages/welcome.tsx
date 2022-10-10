@@ -13,19 +13,17 @@ import {
   WelcomePageTitleWrapper,
 } from "../styles/welcome.styles";
 import { CVData } from "../utils/types";
-import { RootState } from "../store";
 import CharacterShake from "../components/effects/character-shake";
+import { selectCvDataState } from "../store/reducers/CVDataReducer";
 
 const Welcome = () => {
-  const data: CVData = useSelector((state: RootState) => {
-    return state.cvData.data;
-  });
+  const data: CVData = useSelector(selectCvDataState);
 
   return (
-    <WelcomePageContainer id="welcome">
+    <WelcomePageContainer name="welcome">
       <WelcomePageTextWrapper>
         <WelcomePageTitleWrapper>
-          {data.fullName && (
+          {data?.fullName && (
             <CharacterShake
               elements={data?.fullName}
               fontSize={5}
@@ -33,14 +31,17 @@ const Welcome = () => {
               hoverColor={"#dcbaa9"}
             />
           )}
-          <WelcomePageSocialIconWrapper href={data.gitHubUrl} target="_blank">
+          <WelcomePageSocialIconWrapper href={data?.gitHubUrl} target="_blank">
             <WelcomePageSocialIcon icon={faGithub} />
           </WelcomePageSocialIconWrapper>
-          <WelcomePageSocialIconWrapper href={data.linkedInUrl} target="_blank">
+          <WelcomePageSocialIconWrapper
+            href={data?.linkedInUrl}
+            target="_blank"
+          >
             <WelcomePageSocialIcon icon={faLinkedin} />
           </WelcomePageSocialIconWrapper>
         </WelcomePageTitleWrapper>
-        <WelcomePageSubTitle>{data.position}</WelcomePageSubTitle>
+        <WelcomePageSubTitle>{data?.position}</WelcomePageSubTitle>
         <WelcomePageTechnologiesWrapper>
           {data?.skills?.map((item, index) => {
             return (

@@ -1,3 +1,5 @@
+import { AnyAction } from "redux";
+import { RootState } from "..";
 import { CVData } from "../../utils/types";
 import { CVDataActionTypes, setData } from "../actions/CVDataActions";
 
@@ -7,6 +9,7 @@ interface State {
 
 const initialState: State = {
   data: {
+    id: 0,
     fullName: "",
     position: "",
     linkedInUrl: "",
@@ -16,10 +19,10 @@ const initialState: State = {
   },
 };
 
-export const cvDataReducer = (state = initialState, action: any) => {
+export const cvDataReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
     case CVDataActionTypes.SET_CV_DATA: {
-      return { ...state, data: action.payload.data };
+      return { ...state, data: action.payload };
     }
     default:
       return state;
@@ -27,6 +30,8 @@ export const cvDataReducer = (state = initialState, action: any) => {
 };
 
 export const fetchCvData = () => async (dispatch: any, getState: any) => {
-  const response = await fetch("http://localhost:3001/cv");
-  dispatch(setData(await response.json()));
+  const response = await fetch("http://localhost:3000/api/cv");
+  dispatch(await setData(await response.json()));
 };
+
+export const selectCvDataState = (state: RootState) => state.cvData.data;

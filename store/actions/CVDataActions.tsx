@@ -4,7 +4,9 @@ export const CVDataActionTypes = {
   SET_CV_DATA: "SET_CV_DATA",
 };
 
-export const setData = (cVData: JobExperienceData[]) => ({
-  type: "SET_CV_DATA",
-  payload: cVData,
-});
+export const setData = async (cVData: JobExperienceData) => {
+  return {
+    type: "SET_CV_DATA",
+    payload: cVData,
+  };
+};

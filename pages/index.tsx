@@ -1,14 +1,18 @@
 import React from "react";
-import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { AppContainer } from "../styles/app.styles";
-import { fetchCvData } from "../store/reducers/CVDataReducer";
+import {
+  fetchCvData,
+  selectCvDataState,
+} from "../store/reducers/CVDataReducer";
 import LoadingScreen from "../components/loading-screen";
 import Home from "./home";
 
 const App = () => {
   const [fetching, setFetching] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
+
   useEffect(() => {
     dispatch(fetchCvData());
     setFetching(true);
@@ -16,7 +20,7 @@ const App = () => {
 
   setTimeout(() => {
     setFetching(false);
-  }, 4000);
+  }, 2000);
 
   return <AppContainer>{fetching ? <LoadingScreen /> : <Home />}</AppContainer>;
 };

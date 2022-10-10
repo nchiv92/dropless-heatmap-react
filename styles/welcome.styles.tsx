@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Element } from "react-scroll";
 import styled from "styled-components";
 
-const WelcomePageContainer = styled.div`
+const WelcomePageContainer = styled(Element)`
   height: 100vh;
   display: flex;
   justify-content: center;
-  flex-direction-column
+  flex-direction: column;
 `;
 
 const WelcomePageTextWrapper = styled.div`

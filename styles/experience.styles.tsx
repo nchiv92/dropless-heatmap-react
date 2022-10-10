@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { Element } from "react-scroll";
 import styled from "styled-components";
 
-const ExperiencePageContainer = styled.div`
+const ExperiencePageContainer = styled(Element)`
   height: 100vh;
   flex-direction: row;
   display: flex;

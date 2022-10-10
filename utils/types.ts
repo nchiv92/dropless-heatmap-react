@@ -1,8 +1,5 @@
-export interface FootballData {
-  address?: string;
-}
-
 export interface CVData {
+  id: number;
   fullName: string;
   position: string;
   gitHubUrl: string;
@@ -12,6 +9,7 @@ export interface CVData {
 }
 
 export interface JobExperienceData {
+  id: number;
   companyName: string;
   beginDate: string;
   endDate?: string;

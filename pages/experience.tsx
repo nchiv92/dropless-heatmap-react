@@ -14,8 +14,8 @@ import {
   ExperiencePageItemRoleTitle,
   ExperiencePageItemTechnologies,
 } from "../styles/experience.styles";
-import { RootState } from "../store";
 import { StaticImageData } from "next/image";
+import { selectCvDataState } from "../store/reducers/CVDataReducer";
 
 interface ItemProps {
   item: JobExperienceData;
@@ -81,11 +81,13 @@ const ExperienceItem = (props: ItemProps) => {
 };
 
 const Experience = () => {
-  const data: CVData = useSelector((state: RootState) => {
-    return state.cvData.data;
-  });
+  const data: CVData = useSelector(selectCvDataState);
+
   return (
-    <ExperiencePageContainer data-testid={"experience-section"} id="experience">
+    <ExperiencePageContainer
+      data-testid={"experience-section"}
+      name="experience"
+    >
       {data?.jobExperience.map((item, i) => {
         return <ExperienceItem key={i} item={item} index={i} />;
       })}

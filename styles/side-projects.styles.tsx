@@ -1,6 +1,7 @@
+import { Element } from "react-scroll";
 import styled from "styled-components";
 
-const SideProjectsContainer = styled.div`
+const SideProjectsContainer = styled(Element)`
   height: 100vh;
   font-size: 30px;
   font-weight: 600;

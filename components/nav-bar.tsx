@@ -31,7 +31,7 @@ const NavBar = (props: any) => {
           spy={true}
           smooth={true}
           duration={500}
-          activeClass="active"
+          activeClass={"active"}
         >
           <NavBarButtonText>{"Welcome"}</NavBarButtonText>
           <NavBarButtonIcon icon={faHand} />
@@ -41,7 +41,7 @@ const NavBar = (props: any) => {
           spy={true}
           smooth={true}
           duration={500}
-          activeClass="active"
+          activeClass={"active"}
         >
           <NavBarButtonText>{"Experience"}</NavBarButtonText>
           <NavBarButtonIcon icon={faUser} />
@@ -51,7 +51,7 @@ const NavBar = (props: any) => {
           spy={true}
           smooth={true}
           duration={500}
-          activeClass="active"
+          activeClass={"active"}
         >
           <NavBarButtonText>{"Side Projects"}</NavBarButtonText>
           <NavBarButtonIcon icon={faCodeBranch} />
@@ -59,14 +59,14 @@ const NavBar = (props: any) => {
         <NavBarMobileSocialIconWrapper>
           <FontAwesomeIcon
             icon={faGithub}
-            href={data.gitHubUrl}
+            href={data?.gitHubUrl}
             target="_blank"
           />
         </NavBarMobileSocialIconWrapper>
         <NavBarMobileSocialIconWrapper>
           <FontAwesomeIcon
             icon={faLinkedin}
-            href={data.linkedInUrl}
+            href={data?.linkedInUrl}
             target="_blank"
           />
         </NavBarMobileSocialIconWrapper>
