@@ -17,4 +17,6 @@ export interface JobExperienceData {
   duties: string[];
 }
 
-export interface test {}
+export interface test {
+  test: string;
+}
